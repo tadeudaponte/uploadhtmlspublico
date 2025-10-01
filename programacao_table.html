@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conheça a Programação</title>
+  <style>
+    /*
+      Estilo inspirado na landing page: fundo escuro nos cabeçalhos,
+      destaque em vermelho nos títulos e linhas elegantes. A seção
+      utiliza uma largura máxima de 960 px (conforme a página original)
+      e fica centralizada. A tabela é responsiva e permite rolagem
+      horizontal em telas menores.
+    */
+    .programacao-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem;
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+    }
+    /* Estilização geral dos acordeões */
+    .programacao-container details {
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      background-color: #f8f8f8;
+      overflow: hidden;
+    }
+    /* Cabeçalho principal e dos dias */
+    .programacao-container summary {
+      background-color: #3e3e3e;
+      color: #ffffff;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 600;
+      position: relative;
+      list-style: none; /* remove seta padrão em alguns navegadores */
+    }
+    /* Remove marcador padrão no WebKit */
+    .programacao-container summary::-webkit-details-marker {
+      display: none;
+    }
+    /* Ícones de abrir/fechar */
+    .programacao-container summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s;
+    }
+    .programacao-container details[open] > summary::after {
+      content: "−";
+    }
+    /* Sobrecarga para o resumo dos dias para diferenciá-los do cabeçalho principal */
+    .programacao-container .day-details summary {
+      background-color: #505050;
+      font-size: 1.1rem;
+    }
+    /* Estrutura interna de cada dia */
+    .period-section {
+      padding: 1rem;
+    }
+    .period-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #d32f2f; /* vermelho inspirado na landing page */
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0.5rem;
+    }
+    th,
+    td {
+      padding: 0.5rem 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: #d32f2f;
+      font-weight: 700;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    tr:not(:last-child) td {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .session-title {
+      font-weight: 600;
+      color: #333333;
+    }
+    .session-desc {
+      font-size: 0.9rem;
+      color: #555555;
+    }
+    /* Responsividade: em telas menores o texto diminui e a tabela pode
+       rolar horizontalmente */
+    @media (max-width: 768px) {
+      .programacao-container summary {
+        font-size: 1rem;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="programacao-container">
+    <!-- Acordeão principal: mostra ou oculta toda a programação -->
+    <details>
+      <summary>Conheça a Programação</summary>
+
+      <!-- 29 de outubro -->
+      <details class="day-details">
+        <summary>29/10 – Quarta-feira</summary>
+        <div class="period-section">
+          <div class="period-title">Manhã</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>08h30 – 09h00</td>
+                <td>
+                  <div class="session-title">Abertura e Boas‑vindas</div>
+                  <div class="session-desc">Trajetórias, expectativas e alinhamento do programa.</div>
+                </td>
+              </tr>
+              <tr>
+                <td>09h00 – 10h00</td>
+                <td>
+                  <div class="session-title">[Escola, IA] Fundamentos e IA na Prática da Escola</div>
+                  <div class="session-desc">Diagnóstico de adoção, identificação de lacunas e potenciais de uso de IA no contexto escolar.</div>
+                </td>
+              </tr>
+              <tr>
+                <td>10h30 – 12h00</td>
+                <td>
+                  <div class="session-title">[Eu, Gestor] Autoconhecimento e Liderança</div>
+                  <div class="session-desc">Autoconhecimento, posicionamento interno e papel da liderança na inovação e adoção de IA na escola.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="period-title">Tarde</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>14h00 – 15h30</td>
+                <td>
+                  <div class="session-title">[Eu, Profissional] Marca Pessoal e Networking</div>
+                  <div class="session-desc">Construção de posicionamento, narrativa e marca pessoal; integração em comunidades de inovação e IA na educação.</div>
+                </td>
+              </tr>
+              <tr>
+                <td>15h30 – 17h00</td>
+                <td>
+                  <div class="session-title">[Pessoas, IA] Letramento Digital</div>
+                  <div class="session-desc">Estruturação do processo de letramento em IA para profissionais, professores, estudantes e famílias.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- 30 de outubro -->
+      <details class="day-details">
+        <summary>30/10 – Quinta-feira</summary>
+        <div class="period-section">
+          <div class="period-title">Manhã</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>08h30 – 10h30</td>
+                <td>
+                  <div class="session-title">[Escola, Inclusão] Educação Inclusiva</div>
+                  <div class="session-desc">Protocolos, neurodivergências, altas habilidades e relação com famílias. Uso de IA para documentação e adaptação. Entregável: política de inclusão para a escola.</div>
+                </td>
+              </tr>
+              <tr>
+                <td>10h30 – 12h00</td>
+                <td>
+                  <div class="session-title">[Escola, Governança] Governança e Políticas para IA</div>
+                  <div class="session-desc">Mapeamento de atributos para adoção e construção de políticas de uso de IA na escola.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="period-title">Tarde</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>14h00 – 17h00</td>
+                <td>
+                  <div class="session-title">[Laboratório] Práticas com IA</div>
+                  <div class="session-desc">Aplicações práticas de IA nos processos administrativos, de ensino, aprendizagem e inclusão.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="period-title">Noite</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>18h00 – 21h00</td>
+                <td>
+                  <div class="session-title">Atividade Cultural Integrativa</div>
+                  <div class="session-desc">Experiência de integração e troca entre participantes.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- 31 de outubro (complementado com visitas confirmadas) -->
+      <details class="day-details">
+        <summary>31/10 – Sexta-feira</summary>
+        <div class="period-section">
+          <div class="period-title">Manhã</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>08h30 – 11h30</td>
+                <td>
+                  <div class="session-title">Visita à Link School of Business</div>
+                  <div class="session-desc">Visita técnica à Link School of Business, instituição de ensino superior reconhecida por inovação e tecnologia.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="period-title">Tarde</div>
+          <table>
+            <tbody>
+              <tr>
+                <td>14h00 – 16h30</td>
+                <td>
+                  <div class="session-title">Visita à Exame Saint Paul</div>
+                  <div class="session-desc">Visita técnica à Exame Saint Paul, escola de negócios que oferece referência acadêmica em inovação.</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+    </details>
+  </section>
+</body>
+</html>
